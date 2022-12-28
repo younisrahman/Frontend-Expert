@@ -1,0 +1,123 @@
+<!--
+Welcome to our Playground!
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Top Level Heading</h1>
+
+    <section>
+      <h2>Section Heading</h2>
+      <p>Section paragraph</p>
+    </section>
+    <div class="html">
+      <p>
+        A pattern used at the beginning of a <b>ruleset</b> for choosing which
+        elements will be affected by the declarations. There are a variety of
+        different selector types:
+      </p>
+
+      <ul>
+        <li>
+          <b>Type selector</b>: Selects all of the elements of a specific HTML
+          tag. For example, <span>h1</span> would select all
+          <span>&lt;h1&gt;</span> elements.
+        </li>
+        <li>
+          <b>Class selector</b>: Selects all elements with a specific HTML class
+          attribute. Class selectors are prefixed with a <span>.</span>, so for
+          example <span>.foo</span> would select all HTML elements with the
+          attribute <span>class="foo"</span>.
+        </li>
+        <li>
+          <b>ID selector</b>: Selects an element with a specific HTML ID
+          attribute. ID selectors are prefixed with a <span>#</span>, so for
+          example <span>#bar</span> would select the HTML element with the
+          attribute <span>id="bar"</span>.
+        </li>
+        <li>
+          <b>Attribute selector</b>: Selects all elements with a specific HTML
+          attribute set to a specific value. These are surrounded by
+          <span>[]</span> and use a <span>=</span> as a delimiter between the
+          attribute name and value. For example,
+          <span>[type="submit"]</span> would select all elements with a type
+          attribute set to "submit".
+          <br />
+          <br />
+          Excluding the value will select all elements with the attribute set to
+          any value. For example, <span>[type]</span> would select all elements
+          with the type attribute set, regardless of the value.
+          <br />
+          <br />
+          Attribute selectors can also use special syntax for basic pattern
+          matching within the value. There are a variety of options here, but
+          these are some of the more common ones:
+          <ul>
+            <li>
+              <span>[href*="algoexpert.io"]</span> would select all elements
+              with an href attribute with the text "algoexpert.io" at any
+              location.
+            </li>
+            <li>
+              <span>[href$="algoexpert.io"]</span> would select all elements
+              with an href attribute with the text "algoexpert.io" at the end of
+              the value.
+            </li>
+            <li>
+              <span>[href^="https://algoexpert.io"]</span> would select all
+              elements with an href attribute with the text
+              "https://algoexpert.io" at the beginning of the value.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>Combinator</b>: Combines multiple selectors to select elements
+          based on their location in the DOM. There are a few types of
+          combinators:
+          <ul>
+            <li>
+              <b>Descendant combinator</b>: Represented by a single space, in
+              the format <span>selector1 selector2</span>. Selects all elements
+              that match <span>selector2</span> and are a descendant of an
+              element matching <span>selector1</span>. A descendant does not
+              need to be a direct child (e.g. the selected element's grandparent
+              could match selector1).
+            </li>
+            <li>
+              <b>Child combinator</b>: Represented by <span>&gt;</span>, in the
+              format <span>selector1 &gt; selector2</span>. Selects all elements
+              that match <span>selector2</span> and are a direct child of an
+              element matching <span>selector1</span>.
+            </li>
+            <li>
+              <b>Sibling combinator</b>: Represented by <span>~</span>, in the
+              format <span>selector1 ~ selector2</span>. Selects all elements
+              that match <span>selector2</span> and are a sibling of an element
+              matching <span>selector1</span>. The element matching
+              <span>selector2</span> must come after the element matching
+              <span>selector1</span>.
+            </li>
+            <li>
+              <b>Adjacent sibling combinator</b>: Represented by <span>+</span>,
+              in the format <span>selector1 + selector2</span>. Selects all
+              elements that match <span>selector2</span> and have an element
+              matching <span>selector1</span> directly before them in the DOM.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <footer>
+      <h2>Footer Heading</h2>
+      <p>Footer paragraph</p>
+    </footer>
+  </body>
+</html>
