@@ -1,0 +1,21 @@
+/* Welcome to our Playground! */
+
+p {
+  color: blue;
+}
+
+.red {
+  color: red;
+}
+
+#green {
+  color: green;
+}
+
+/*
+  Even though this might seem specific,
+  it is still less specific than an ID!
+*/
+div > p.red {
+  color: black;
+}
