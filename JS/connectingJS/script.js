@@ -1,6 +1,6 @@
 const button = document.querySelector('button');
 button.addEventListener('click', changeBackground);
 
-const changeBackground = () => {
+function changeBackground() {
   document.body.style.backgroundColor = 'tomato';
-};
+}
