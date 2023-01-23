@@ -10,4 +10,5 @@ const allLi = document.querySelectorAll('li');
 allLi[0].textContent = 'Changed';
 allLi[0].value = 10;
 allLi[0].setAttribute('value', 11);
-allLi[0].setAttribute('class', 'blue');
+allLi[0].setAttribute('class', 'blue big');
+allLi[0].classList.add('blue');
