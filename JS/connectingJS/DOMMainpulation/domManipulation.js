@@ -42,3 +42,17 @@ parent.append(fragment);
 
 allLi[0].classList.add('big');
 console.log(window.getComputedStyle(allLi[0]).fontSize);
+
+const scrollable = document.getElementById('scrollable');
+
+console.log(scrollable.clientHeight);
+console.log(scrollable.offsetHeight);
+console.log(scrollable.scrollHeight);
+console.log(scrollable.offsetTop);
+console.log(scrollable.querySelectorAll('p')[5].offsetTop);
+scrollable.querySelectorAll('p')[5].scrollIntoView();
+
+scrollable.scrollTo({
+  top: scrollable.querySelectorAll('p')[0].offsetTop,
+  behavior: 'smooth',
+});
