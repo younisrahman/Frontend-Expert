@@ -1,0 +1,96 @@
+/*  Write your code here. */
+div{
+    border-radius: 50%
+  }
+  
+  #outer {
+      background-color: #ffa500;
+    width:200px;
+    height:200px;
+    padding:25px;
+    border: 25px solid #ff0000
+  }
+  #middle {
+      background-color: #008000;
+    width:100px;
+    height:100px;
+    padding:25px;
+    border: 25px solid #ffff00
+  }
+  #inner {
+      background-color: #800080;
+    width:50px;
+    height:50px;
+    border: 25px solid #0000ff 
+  }
+  
+  /* Delete this ruleset. */
+  body {
+    background-color: white;
+  }
+  
+  /* Solution 2 */
+  /*  Write your code here. */
+:root{
+    --circle-thickness:15px
+  }
+  
+  div{
+    border-radius: 50%
+  }
+  
+  #outer {
+    --red-size: calc(var(--circle-thickness)*8);
+    background-color: #ffa500;
+    width:var(--red-size);
+    height:var(--red-size);
+    border: var(--circle-thickness) solid #ff0000;
+    padding:var(--circle-thickness);
+  }
+  
+  #middle {
+    --greeen-size: calc(var(--circle-thickness)*4);
+    background-color: #008000;
+    width:var(--green-size);
+    height:var(--green-size);
+    border: var(--circle-thickness) solid #ffff00;
+    padding:var(--circle-thickness);
+  }
+  #inner {
+    --blue-size: calc(var(--circle-thickness)*2);
+    background-color: #800080;
+    width:var(--blue-size);
+    height:var(--blue-size);
+    border: var(--circle-thickness) solid #0000ff 
+  }
+  
+  /* Delete this ruleset. */
+  body {
+    background-color: white;
+  }
+  
+  
+
+  /* Solution3 */
+
+  /*  Write your code here. */
+
+/* Delete this ruleset. */
+#inner {
+    --circle-thickness:25px;
+    --purple-size: calc(var(--circle-thickness)*2);
+    --offset: calc(var(--circle-thickness)*5);
+    position: relative;
+    top: var(--offset);
+    left:var(--offset);
+    border-radius: 50%;
+    background-color: #800080;
+    width:var(--purple-size);
+    height:var(--purple-size);
+    box-shadow: 0 0 0 var(--circle-thickness) #0000ff,
+      0 0 0 calc(var(--circle-thickness)*2) #008000,
+      0 0 0 calc(var(--circle-thickness)*3) #ffff00,
+      0 0 0 calc(var(--circle-thickness)*4) #ffa500,
+      0 0 0 calc(var(--circle-thickness)*5) #ff0000;
+      
+  }
