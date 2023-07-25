@@ -1,0 +1,127 @@
+/*  Write your code here. */
+
+/* Solution 1 Flex */
+#wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;  
+    gap:24px 10px;
+  }
+  
+  
+  
+  #algo-expert {
+    /*  Write your code here. */
+    order:2;
+    flex-basis: 75%;
+    margin: auto;
+    background-color: #626ee3;
+  }
+  
+  #systems-expert {
+    /*  Write your code here. */
+    flex-basis: 50%;
+    align-self:center;
+    background-color: #890023;
+  }
+  
+  #ml-expert {
+    /*  Write your code here. */
+    height: 75px;
+    flex-basis: 30%;
+    background-color: #f37f1b;
+  }
+  
+  #frontend-expert {
+    /*  Write your code here. */
+    order:3;
+    flex-basis: 40%;
+    align-self: flex-end;
+    background-color: #11967e;
+  }
+  
+  #programming-expert {
+    /*  Write your code here. */
+    order:4;
+    height: 75px;
+    flex-grow:1;
+    background-color: #f21b3f;
+  }
+  
+  .product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+  }
+  
+
+
+
+/* Solution 1 Grid */
+/*  Write your code here. */
+
+
+#wrapper {
+    display: grid;
+    grid-template-areas:
+      "system system . ml"
+      "algo algo algo algo"
+      "frontend programming programming programming";
+    grid-template-columns:40fr 10fr 20fr 30fr;
+    row-gap: 24px;
+  }
+  
+  
+  
+  #algo-expert {
+    /*  Write your code here. */
+    width: 75%;
+    margin: auto;
+    grid-area: algo;
+    background-color: #626ee3;
+  }
+  
+  #systems-expert {
+    /*  Write your code here. */
+    grid-area: system;
+    align-self:center;
+    background-color: #890023;
+  }
+  
+  #ml-expert {
+    /*  Write your code here. */
+    height: 75px;
+    grid-area:ml;
+    background-color: #f37f1b;
+  }
+  
+  #frontend-expert {
+    /*  Write your code here. */
+    
+    grid-area: frontend;
+    align-self: flex-end;
+    background-color: #11967e;
+  }
+  
+  #programming-expert {
+    /*  Write your code here. */
+    
+    height: 75px;
+    grid-area: programming;
+    margin-left: 10px;
+    background-color: #f21b3f;
+  }
+  
+  .product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+  }
+  
