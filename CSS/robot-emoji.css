@@ -1,0 +1,224 @@
+/* Solution 1 */
+
+/* Write your code here. */
+.head{
+    width:150px;
+    height:150px;
+    margin: 50px;
+    border: 5px solid #9bbcc2;
+    border-radius: 20px;
+    background-color:#a4d9eb;
+    position: relative;
+  }
+  
+  .light{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .bulb{
+    width: 30px;
+    height:30px;
+    margin-bottom: -5px;
+    border-radius: 50%;
+    background-color: #ffa500;
+    z-index: 1;
+  }
+  .stick{
+    width: 10px;
+    height: 15px;
+    background-color: #808080;
+  }
+  
+  .ear{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 50px;
+    background-color: #c90a0a;
+  }
+  .ear:first-of-type{
+    left: -15px;
+    border-top-left-radius:5px; 
+    border-bottom-left-radius:5px; 
+  }
+  .ear:last-of-type{
+    right: -15px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .eyes{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 25px;
+  }
+  .eye{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    border: 5px solid #00b3ff;
+  }
+  
+  .nose{
+    width: 0;
+    height:0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #c90a0a;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  .mouth{
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #dedede;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform:translateX(-50%);
+    overflow: hidden;
+  }
+  .tooth{
+    width: 5px;
+    height: 100%;
+    background-color: black;
+  }
+  
+  /* Delete this ruleset. */
+  body {
+    background-color: black;
+  }
+  
+/* Solution 2nd   */
+
+/* Write your code here. */
+
+.head{
+    --head-border-size: 5px;
+    width:150px;
+    height:150px;
+    margin: 50px;
+    border: var(--head-border-size) solid #9bbcc2;
+    border-radius: 20px;
+    background-color:#a4d9eb;
+    position: relative;
+  }
+  
+  .light{
+    --bulb-height: 30px;
+    --bulb-overlap: 5px;
+    --stick-height: 15px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: calc((var(--bulb-height) + var(--stick-height) + var(--head-border-size) - var(--bulb-overlap)) *-1)  ;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .bulb{
+  
+    width: var(--bulb-height);
+    height: var(--bulb-height);
+    margin-bottom: calc(var(--bulb-overlap)*-1);
+    border-radius: 50%;
+    background-color: #ffa500;
+    z-index: 1;
+  }
+  .stick{
+    width: 10px;
+    height: var(--stick-height);
+    background-color: #808080;
+  }
+  
+  .ear{
+    --ear-width: 10px;
+    --ear-border-radius: 5px;
+    --ear-edge-offset: calc((var(--ear-width) + var(--head-border-size)) *-1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--ear-width);
+    height: 50px;
+    background-color: #c90a0a;
+  }
+  .ear:first-of-type{
+    left: var(--ear-edge-offset);
+    border-top-left-radius: var(--ear-border-radius); 
+    border-bottom-left-radius: var(--ear-border-radius); 
+  }
+  .ear:last-of-type{
+    right: var(--ear-edge-offset);
+    border-top-right-radius: var(--ear-border-radius); 
+    border-bottom-right-radius: var(--ear-border-radius); 
+  }
+  
+  .eyes{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 25px;
+  }
+  .eye{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    border: 5px solid #00b3ff;
+  }
+  
+  .nose{
+    width: 0;
+    height:0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #c90a0a;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  .mouth{
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #dedede;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform:translateX(-50%);
+    overflow: hidden;
+  }
+  .tooth{
+    width: 5px;
+    height: 100%;
+    background-color: black;
+  }
+  
+  /* Delete this ruleset. */
+  body {
+    background-color: black;
+  }
+  
+
+  
+  
