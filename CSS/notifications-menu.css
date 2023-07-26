@@ -1,0 +1,65 @@
+/* Write your code here. */
+
+#wrapper {
+    background-color: lightgrey;
+    width: 280px;
+    padding:10px;
+    border-radius: 10px;
+  }
+  
+  h1{
+    text-align: center;
+    margin: 0 0 10px 0;
+    text-decoration: underline;
+  }
+  
+  #notifications{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .notification{
+    display: grid;
+    grid-template-areas:
+      'photo text'
+      'photo time';
+    gap:10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white; 
+  }
+  
+  .time{
+    grid-area: time;
+    align-self: end;
+    justify-self: end;
+    margin:0;
+    font-size: 12px;
+    font-style: italic
+  }
+  p{
+    grid-area: text;
+    margin:0;
+  }
+  img{
+    grid-area: photo;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid black;
+  }
+  .user{
+    font-weight: bold;
+  }
+  
+  button{
+    width: 100%;
+    margin-top : 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #02203c;
+    color: white
+    
+  }
+  
