@@ -25,7 +25,9 @@ export default function Wordle() {
     if (solution == null) return;
 
     const onPressKey = (event) => {
-      if (guesses[NUM_GUESSES - 1] != null || guesses.include(solution)) return;
+      if (guesses[NUM_GUESSES - 1] != null || guesses.includes(solution)) {
+        return;
+      }
 
       const charCode = event.key.toLowerCase().charCodeAt(0);
       const isLetter =
@@ -50,9 +52,7 @@ export default function Wordle() {
     };
     window.addEventListener("keydown", onPressKey);
 
-    return () => {
-      window.removeEventListener("keydown", onPressKey);
-    };
+    return () => window.removeEventListener("keydown", onPressKey);
   }, [guesses, solution]);
 
   const currentGuessIndex = guesses.findIndex((guess) => guess == null);
