@@ -1,3 +1,5 @@
+const INTERVAL_MS = 1000 / 60;
+
 let timerID;
 let lastTimerStartTime = 0;
 let millisElapsedBeforeLastStart = 0;
@@ -15,7 +17,8 @@ function startTimer() {
   stopButton.disabled = false;
   resetButton.disabled = true;
   lastTimerStartTime = Date.now();
-  timerID = requestAnimationFrame(updateTimer);
+  //   timerID = requestAnimationFrame(updateTimer);
+  timerID = setInterval(updateTimer, INTERVAL_MS);
 }
 function stopTimer() {
   startButton.disabled = false;
@@ -24,7 +27,8 @@ function stopTimer() {
 
   millisElapsedBeforeLastStart += Date.now() - lastTimerStartTime;
 
-  cancelAnimationFrame(timerID);
+  //   cancelAnimationFrame(timerID);
+  clearInterval(timerID);
 }
 function resetTimer() {
   resetButton.disabled = true;
@@ -43,7 +47,7 @@ function updateTimer() {
   const minutesText = formatNumber(Math.floor(minutesElapsed), 2);
 
   timer.textContent = `${minutesText}:${secoundsText}:${millisText}`;
-  timerID = requestAnimationFrame(updateTimer);
+  //   timerID = requestAnimationFrame(updateTimer);
 }
 
 function formatNumber(number, disiredLength) {
