@@ -1,5 +1,15 @@
 const BOARD_WIDTH = 3;
-let boardState = generateEmptyBoardState();
+const WIN_CONDITIONS = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+];
+// let boardState = generateEmptyBoardState();
 let currentPlayer = 1;
 let numMovesDone = 0;
 const gameHeading = document.getElementById("game-heading");
@@ -24,7 +34,8 @@ function makeMove(gameSquare, row, col) {
   numMovesDone++;
   boardState[row][col] = currentPlayer;
 
-  if (didPlayerWin(currentPlayer)) {
+  // if (didPlayerWin(currentPlayer)) {
+  if (didPlayerWin()) {
     gameHeading.textContent = `Player ${currentPlayer}'s Won!`;
     endGame();
   } else if (numMovesDone >= BOARD_WIDTH * BOARD_WIDTH) {
@@ -37,45 +48,53 @@ function makeMove(gameSquare, row, col) {
 }
 
 function setCurrentPlayerHeader() {
-  gameHeading.textContent = `Player ${currentPlayer}'s Turn`;
+  gameHeading.textContent = `Player ${currentPlayer} Turn`;
 }
 
-function didPlayerWin(currentPlayer) {
-  const rows = [0, 1, 2];
-  const cols = [0, 1, 2];
+function didPlayerWin() {
+  // function didPlayerWin(currentPlayer) {
+  // const rows = [0, 1, 2];
+  // const cols = [0, 1, 2];
 
-  const wonHorizontal = rows.some((row) => {
-    return (
-      boardState[row][0] === currentPlayer &&
-      boardState[row][1] === currentPlayer &&
-      boardState[row][2] === currentPlayer
-    );
+  // const wonHorizontal = rows.some((row) => {
+  //   return (
+  //     boardState[row][0] === currentPlayer &&
+  //     boardState[row][1] === currentPlayer &&
+  //     boardState[row][2] === currentPlayer
+  //   );
+  // });
+
+  // const wonVertical = cols.some((col) => {
+  //   return (
+  //     boardState[0][col] === currentPlayer &&
+  //     boardState[1][col] === currentPlayer &&
+  //     boardState[2][col] === currentPlayer
+  //   );
+  // });
+
+  // const wonTopLeftToBottomRight =
+  //   boardState[0][0] === currentPlayer &&
+  //   boardState[1][1] === currentPlayer &&
+  //   boardState[2][2] === currentPlayer;
+
+  // const wonTopRighttoBottomLeft =
+  //   boardState[0][2] === currentPlayer &&
+  //   boardState[1][1] === currentPlayer &&
+  //   boardState[2][0] === currentPlayer;
+
+  // return (
+  //   wonHorizontal ||
+  //   wonVertical ||
+  //   wonTopLeftToBottomRight ||
+  //   wonTopRighttoBottomLeft
+  // );
+
+  const releventText = currentPlayer === 1 ? "X" : "O";
+  return WIN_CONDITIONS.some((condition) => {
+    return condition.every((gameSquarePosition) => {
+      return gameSquares[gameSquarePosition].textContent === releventText;
+    });
   });
-
-  const wonVertical = cols.some((col) => {
-    return (
-      boardState[0][col] === currentPlayer &&
-      boardState[1][col] === currentPlayer &&
-      boardState[2][col] === currentPlayer
-    );
-  });
-
-  const wonTopLeftToBottomRight =
-    boardState[0][0] === currentPlayer &&
-    boardState[1][1] === currentPlayer &&
-    boardState[2][2] === currentPlayer;
-
-  const wonTopRighttoBottomLeft =
-    boardState[0][2] === currentPlayer &&
-    boardState[1][1] === currentPlayer &&
-    boardState[2][0] === currentPlayer;
-
-  return (
-    wonHorizontal ||
-    wonVertical ||
-    wonTopLeftToBottomRight ||
-    wonTopRighttoBottomLeft
-  );
 }
 
 function endGame() {
@@ -86,7 +105,7 @@ function endGame() {
 }
 
 function restartGame() {
-  boardState = generateEmptyBoardState();
+  // boardState = generateEmptyBoardState();
   currentPlayer = 1;
   numMovesDone = 0;
   setCurrentPlayerHeader();
@@ -97,6 +116,6 @@ function restartGame() {
   restartButton.style.display = "none";
 }
 
-function generateEmptyBoardState() {
-  return new Array(BOARD_WIDTH).fill().map(() => new Array(BOARD_WIDTH).fill());
-}
+// function generateEmptyBoardState() {
+//   return new Array(BOARD_WIDTH).fill().map(() => new Array(BOARD_WIDTH).fill());
+// }
