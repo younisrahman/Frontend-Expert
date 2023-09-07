@@ -42,6 +42,5 @@ function createSuggestionsElement(suggestion) {
 
 function clearSuggestions() {
   clearTimeout(timeoutID);
-
   suggestionsList.innerHTML = "";
 }
